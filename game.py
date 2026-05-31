@@ -39,6 +39,7 @@ class SnakeGameAI:
         self.display = pygame.display.set_mode((self.w, self.h))
         pygame.display.set_caption('Snake')
         self.clock = pygame.time.Clock()
+        self.reset()
         
     def reset(self):
         # init game state
@@ -138,7 +139,7 @@ class SnakeGameAI:
             
 
 if __name__ == '__main__':
-    game = SnakeGame()
+    game = SnakeGameAI()
     
     # game loop
     while True:
