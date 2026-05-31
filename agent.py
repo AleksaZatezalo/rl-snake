@@ -15,7 +15,8 @@ class Agent:
         self.epsilon = 0 #randomness
         self.gamma = 0 # discount rate
         self.memory = deque(maxlen = MAX_MEMORY) # popleft
-        # TODO: model, trainer
+        self.model = None #TODO
+        self.trainer = None #TODO
 
     def get_state(self, game):
         head = game.snake[0]
@@ -64,7 +65,7 @@ class Agent:
         return np.array(state, dtype=int)
 
     def remeber(self, state, action, reward, next_state, done):
-        pass
+        self.memory.append(state, action, reward, next_state, done)
 
     def train_long_memory(self):
         pass
